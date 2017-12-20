@@ -199,7 +199,7 @@ public class DigitCashier {
 		}
 	}
 	
-	
+	//
 	//This method puts data from DB table employees into a arraylist called employeesList
 		public ArrayList<Employees> getEmployeesList(){
 			connect = getConnection();
