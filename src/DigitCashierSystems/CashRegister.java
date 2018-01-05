@@ -33,7 +33,7 @@ public class CashRegister extends JPanel {
 	private Connection connect = null;
 	private int code;
 	public Double payment;
-	public Double change;
+	public double change;
 	public int orderNr = 100;
 	public Double totSum = 0.00;
 	JList<Object> listShoppingCart;
@@ -69,6 +69,7 @@ public class CashRegister extends JPanel {
 		
 		//Create buttons and setting text in textfield to number on button
 		JButton btn1 = new JButton("1");
+		btn1.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btn1.setBounds(12, 114, 84, 40);
 		pnlCashRegister.add(btn1);
 		btn1.addActionListener(new ActionListener() {
@@ -79,6 +80,7 @@ public class CashRegister extends JPanel {
 		});
 						
 		JButton btn2 = new JButton("2");
+		btn2.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btn2.setBounds(98, 114, 84, 40);
 		pnlCashRegister.add(btn2);
 		btn2.addActionListener(new ActionListener() {
@@ -90,6 +92,7 @@ public class CashRegister extends JPanel {
 						
 		JButton btn3 = new JButton("3");
 		btn3.setBounds(184, 114, 84, 40);
+		btn3.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btn3);
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -100,6 +103,7 @@ public class CashRegister extends JPanel {
 					
 		JButton btn4 = new JButton("4");
 		btn4.setBounds(12, 156, 84, 40);
+		btn4.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btn4);
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -110,6 +114,7 @@ public class CashRegister extends JPanel {
 						
 		JButton btn5 = new JButton("5");
 		btn5.setBounds(98, 156, 84, 40);
+		btn5.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btn5);
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -120,6 +125,7 @@ public class CashRegister extends JPanel {
 						
 		JButton btn6 = new JButton("6");
 		btn6.setBounds(184, 156, 84, 40);
+		btn6.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btn6);
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -130,6 +136,7 @@ public class CashRegister extends JPanel {
 			
 		JButton btn7 = new JButton("7");
 		btn7.setBounds(12, 199, 84, 40);
+		btn7.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btn7);
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -140,6 +147,7 @@ public class CashRegister extends JPanel {
 			
 		JButton btn8 = new JButton("8");
 		btn8.setBounds(98, 199, 84, 40);
+		btn8.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btn8);
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -150,6 +158,7 @@ public class CashRegister extends JPanel {
 					
 		JButton btn9 = new JButton("9");
 		btn9.setBounds(184, 199, 84, 40);
+		btn9.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btn9);
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -160,6 +169,7 @@ public class CashRegister extends JPanel {
 		
 		JButton btn0 = new JButton("0");
 		btn0.setBounds(98, 242, 84, 40);
+		btn0.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btn0);
 		btn0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -171,6 +181,7 @@ public class CashRegister extends JPanel {
 		//Creates dot button that puts a dot in the textField so we can input price and weight
 		JButton btnDot = new JButton(".");
 		btnDot.setBounds(98, 285, 84, 40);
+		btnDot.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btnDot);
 		btnDot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -182,6 +193,7 @@ public class CashRegister extends JPanel {
 		//Creating add button and adding text in textfield to textarea. Removes text from textfield
 		JButton btnAdd = new JButton("+");
 		btnAdd.setBounds(12, 242, 84, 40);
+		btnAdd.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btnAdd);
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
@@ -192,7 +204,7 @@ public class CashRegister extends JPanel {
 					for (Items i : itemList) {
 						if (i.getItemNumber() != null && i.getItemNumber().equals(itemNr)) {
 							order.add(i);
-							dlm.addElement(i.getItemNumber() + "  " + i.getItemName() + "  " + i.getPrice());
+							dlm.addElement(i.getItemNumber() + "  " + i.getItemName() + "  " + String.format("%.2f" , i.getPrice() ) );
 							listShoppingCart.setModel(dlm);
 									
 						}
@@ -212,6 +224,7 @@ public class CashRegister extends JPanel {
 		//Makes a button that empties textField
 		JButton btnMinus = new JButton("-");
 		btnMinus.setBounds(184, 242, 84, 40);
+		btnMinus.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pnlCashRegister.add(btnMinus);
 		btnMinus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -308,16 +321,20 @@ public class CashRegister extends JPanel {
 				
 				String pmnt = txtField.getText();
 				payment = Double.parseDouble(pmnt);
-				change = payment - totSum;
+				int paymentInt = (int) Math.round(payment);
+				int totSumInt = (int) Math.round(totSum);
+				change = paymentInt - totSumInt;
+				payment = (double)paymentInt;
+				totSum = (double)totSumInt;
 				txtField.setText("");
-				lblPayed.setText("Payed: " + String.format("%.2f" , payment) + "kr");
+				lblPayed.setText("Payed: " +  String.format("%.2f" , payment) + "kr");
 				lblChange.setText("Change: " + String.format("%.2f" , change) + "kr");
 			}
 		});
 				
 				
 		//Create remove button and removes selected item from listShoppingCart
-		JButton btnRemoveItem = new JButton("Remove item");
+		JButton btnRemoveItem = new JButton("Delete");
 		btnRemoveItem.setForeground(Color.BLACK);
 		btnRemoveItem.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnRemoveItem.setBackground(new Color(250, 128, 114));
@@ -352,6 +369,7 @@ public class CashRegister extends JPanel {
 		//Creates a button that can recalculate price depending on the weight
 		JButton btnWeight = new JButton("Weight");
 		btnWeight.setBounds(12, 286, 84, 40);
+		btnWeight.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		pnlCashRegister.add(btnWeight);
 		btnWeight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -381,6 +399,7 @@ public class CashRegister extends JPanel {
 		//Creates a button that recalculates price depending on amount
 		JButton btnAmount = new JButton("Amount");
 		btnAmount.setBounds(184, 285, 84, 40);
+		btnAmount.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		pnlCashRegister.add(btnAmount);
 		btnAmount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -1,9 +1,11 @@
 package DigitCashierSystems;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -73,35 +75,40 @@ public class DigitCashier {
 		frmLogin.getContentPane().setLayout(new CardLayout(0,0));
 		
 		pnlLogin = new JPanel();
+		pnlLogin.setBackground(new Color(255, 255, 255));
 		pnlLogin.setLayout(null);
 		pnlLogin.setVisible(true);
 		frmLogin.getContentPane().add(pnlLogin);
 		
-		JLabel lblLogin = new JLabel("Enter your birthdate and PIN to sign in.");
-		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblLogin.setBounds(102, 183, 365, 25);
-		pnlLogin.add(lblLogin);
+		JLabel lblCompName = new JLabel("Digit Cashi");
+		lblCompName.setFont(new Font("Stencil", Font.ITALIC, 60));
+		lblCompName.setForeground(new Color(0, 102, 153));
+		lblCompName.setRequestFocusEnabled(false);
+		lblCompName.setBounds(115, 55, 366, 109);
+		pnlLogin.add(lblCompName);
+		
 		
 		JLabel lblKod = new JLabel("PIN:");
 		lblKod.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblKod.setBounds(235, 269, 56, 16);
+		lblKod.setBounds(199, 270, 56, 16);
 		pnlLogin.add(lblKod);
 		
 		JLabel lblBirthdate = new JLabel("Birthdate:");
 		lblBirthdate.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblBirthdate.setBounds(201, 228, 70, 16);
+		lblBirthdate.setBounds(165, 229, 70, 16);
 		pnlLogin.add(lblBirthdate);
 		
 		txtFieldBDate = new JTextField();
+		txtFieldBDate.setBackground(SystemColor.menu);
 		txtFieldBDate.setToolTipText("Birthdate format is YYYYMMDD-XXXX");
-		txtFieldBDate.setBounds(274, 220, 133, 34);
+		txtFieldBDate.setBounds(238, 223, 133, 34);
 		pnlLogin.add(txtFieldBDate);
 		txtFieldBDate.setColumns(10);
 		
 		passField = new JPasswordField();
+		passField.setBackground(SystemColor.menu);
 		passField.setToolTipText("3 digit PIN");
-		passField.setBounds(274, 262, 133, 32);
+		passField.setBounds(238, 263, 133, 32);
 		pnlLogin.add(passField);
 		
 		//Creates a login button and gets value from passwordField and textfieldBDate to compare with employeesList
