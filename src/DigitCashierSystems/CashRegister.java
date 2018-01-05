@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -56,6 +57,7 @@ public class CashRegister extends JPanel {
 		frmCashRegister.getContentPane().setLayout(new CardLayout(0,0));
 		
 		pnlCashRegister = new JPanel();
+		pnlCashRegister.setBackground(SystemColor.window);
 		pnlCashRegister.setLayout(null);
 		pnlCashRegister.setVisible(true);
 		frmCashRegister.getContentPane().add(pnlCashRegister);
@@ -63,6 +65,8 @@ public class CashRegister extends JPanel {
 		txtField = new JTextField();
 		txtField.setEditable(false);
 		txtField.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		txtField.setBorder(new LineBorder(new Color(0, 0, 0)));
+		txtField.setBackground(new Color(255, 255, 255));
 		txtField.setBounds(11, 54, 257, 57);
 		pnlCashRegister.add(txtField);
 		txtField.setColumns(10);
@@ -234,8 +238,8 @@ public class CashRegister extends JPanel {
 		
 		//Creates coupon button and makes a discount of the total sum
 		JButton btnCoupon = new JButton("Coupon");
-		btnCoupon.setBackground(new Color(127, 255, 212));
-		btnCoupon.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnCoupon.setBackground(new Color(0, 153, 102));
+		btnCoupon.setFont(new Font("Trebuchet MS", Font.BOLD, 16));
 		btnCoupon.setBounds(11, 339, 257, 40);
 		pnlCashRegister.add(btnCoupon);
 		btnCoupon.addActionListener(new ActionListener() {
@@ -258,8 +262,8 @@ public class CashRegister extends JPanel {
 		//Creates done button to be pressed when customer has payed to write out receipt and wipe everything clean
 		JButton btnDone = new JButton("Done");
 		btnDone.setForeground(Color.BLACK);
-		btnDone.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnDone.setBackground(Color.CYAN);
+		btnDone.setFont(new Font("Trebuchet MS", Font.BOLD, 16));
+		btnDone.setBackground(new Color(255, 255, 0));
 		btnDone.setBounds(11, 499, 122, 40);
 		pnlCashRegister.add(btnDone);
 		btnDone.addActionListener(new ActionListener() {
@@ -310,10 +314,10 @@ public class CashRegister extends JPanel {
 		});
 		
 		
-		//Create a button for customer paying with cash	
+		//Create a button for customer paying with cash
 		JButton btnCash = new JButton("Cash");
-		btnCash.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnCash.setBackground(new Color(70, 130, 180));
+		btnCash.setFont(new Font("Trebuchet MS", Font.BOLD, 16));
+		btnCash.setBackground(new Color(0, 153, 204));
 		btnCash.setBounds(11, 393, 122, 40);
 		pnlCashRegister.add(btnCash);
 		btnCash.addActionListener(new ActionListener() {
@@ -336,8 +340,8 @@ public class CashRegister extends JPanel {
 		//Create remove button and removes selected item from listShoppingCart
 		JButton btnRemoveItem = new JButton("Delete");
 		btnRemoveItem.setForeground(Color.BLACK);
-		btnRemoveItem.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnRemoveItem.setBackground(new Color(250, 128, 114));
+		btnRemoveItem.setFont(new Font("Trebuchet MS", Font.BOLD, 16));
+		btnRemoveItem.setBackground(new Color(255, 0, 0));
 		btnRemoveItem.setBounds(11, 446, 257, 40);
 		pnlCashRegister.add(btnRemoveItem);
 		btnRemoveItem.addActionListener(new ActionListener() {
@@ -355,8 +359,8 @@ public class CashRegister extends JPanel {
 				
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setForeground(Color.BLACK);
-		btnCancel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnCancel.setBackground(new Color(255, 127, 80));
+		btnCancel.setFont(new Font("Trebuchet MS", Font.BOLD, 16));
+		btnCancel.setBackground(new Color(255, 51, 0));
 		btnCancel.setBounds(146, 499, 122, 40);
 		pnlCashRegister.add(btnCancel);
 		btnCancel.addActionListener(new ActionListener() {
@@ -436,18 +440,18 @@ public class CashRegister extends JPanel {
 		pnlCashRegister.add(listShoppingCart);
 		
 		lblTotSum = new JLabel("Total sum: ");
-		lblTotSum.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblTotSum.setBounds(326, 289, 272, 31);
+		lblTotSum.setFont(new Font("Trebuchet MS", Font.BOLD, 17));
+		lblTotSum.setBounds(308, 353, 272, 31);
 		pnlCashRegister.add(lblTotSum);
 		
 		lblPayed = new JLabel("Payed:");
-		lblPayed.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblPayed.setBounds(326, 329, 272, 31);
+		lblPayed.setFont(new Font("Trebuchet MS", Font.BOLD, 17));
+		lblPayed.setBounds(308, 393, 272, 31);
 		pnlCashRegister.add(lblPayed);
 		
 		lblChange = new JLabel("Change:");
-		lblChange.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblChange.setBounds(329, 371, 272, 31);
+		lblChange.setFont(new Font("Trebuchet MS", Font.BOLD, 17));
+		lblChange.setBounds(311, 435, 272, 31);
 		pnlCashRegister.add(lblChange);
 		
 		JLabel lblUserC = new JLabel("User:");
